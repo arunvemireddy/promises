@@ -63,6 +63,7 @@ Promise.all(promises)
     activities.forEach(activity=>{console.log(`promise all msg: ${activity}`)});
 })
 .catch(error=>{console.error(error)});
+// if any of the promises in Promise.all() rejects, it will immediately reject the entire 'Promise.all()'
 // end
 
 // 4 chaining promise
@@ -82,6 +83,18 @@ fetchActivity()
 .catch(error=>{
     console.log(`Chaning Error fetching activities:`,error)
 })
+// end
 
+// 5 Async/Awaut with Promises
+// start
+async function myAsyncFunction(){
+    try{
+        let result = await myPromise;
+        console.log(`async success msg: ${result}`);
+    }catch(error){
+        console.error(`async error msg: ${error}`);
+    }
+}
 
-
+myAsyncFunction();
+// end
